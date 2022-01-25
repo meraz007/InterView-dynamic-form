@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-
     <div class="contaner">
       <div class="row justify-content-center py-5">
         <div class="col-md-8">

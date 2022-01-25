@@ -5,26 +5,49 @@
         <div class="col-md-10">
           <div class="row">
              <div class="col-md-4">
-          <form>
+          <form @submit.prevent="submitForm">
             <label class="form-label">Form Name:</label>
-            <input class="form-control" type="text">
+            <input 
+            class="form-control" 
+            type="text"
+            v-model="inputField.FormName"
+            >
             <div v-show="isVisibleText">
               <label class="form-label">Text</label>
-              <input class="form-control" type="text">
+              <input 
+              class="form-control" 
+              type="text"
+              v-model="inputField.text"
+              >
             </div>
             <div v-show="isVisibleNumber">
               <label class="form-label">Number</label>
-              <input class="form-control" type="text">
+              <input 
+              class="form-control" 
+              type="text"
+              v-model="inputField.number"
+              >
             </div>
             <div v-show="isVisibleDate">
               <label class="form-label">Date</label>
-              <input class="form-control" type="text">
+              <input 
+              class="form-control" 
+              type="text"
+              v-model="inputField.date"
+              >
             </div>
             <div v-show="isVisibleTextArea">
               <label class="form-label">Text Area</label>
-              <input class="form-control" type="text">
+              <input 
+              class="form-control"
+               type="text"
+               v-model="inputField.textArea"
+               >
             </div>
-            <button class="btn btn-secondary my-3" type="submit">Submit</button>
+            <button 
+            class="btn btn-secondary my-3" 
+            type="submit"
+            >Submit</button>
           </form>
         </div>
         <div class="col-md-4">
@@ -50,7 +73,14 @@ export default {
       isVisibleText:false,
       isVisibleNumber:false,
       isVisibleDate:false,
-      isVisibleTextArea:false
+      isVisibleTextArea:false,
+      inputField:{
+        FormName:'',
+        text:'',
+        number:'',
+        date:'',
+        textArea:''
+      }
     }
   },
   methods:{
@@ -66,6 +96,10 @@ export default {
     showInputTextarea(){
       this.isVisibleTextArea=true
     },
+    submitForm(){
+      console.log(this.inputField)
+      this.inputField=''
+    }
   }
   
 }

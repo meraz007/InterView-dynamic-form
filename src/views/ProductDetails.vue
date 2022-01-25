@@ -1,7 +1,5 @@
 <template>
-  <div class="home">
-
-    <div class="contaner">
+  <div class="contaner">
       <div class="row justify-content-center py-5">
         <div class="col-md-8">
           <div class="card">
@@ -16,21 +14,24 @@
             <table class="table table-dark table-striped">
               <thead>
                 <tr>
-                  <th scope="col">SI</th>
                   <th scope="col">Name</th>
-                  <th scope="col">Action</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Made At</th>
+                  <th scope="col">About</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">1</th>
-                  <td><router-link class="text-white" to="/EditUserForm">Food</router-link></td>
-                  <td><router-link class="btn btn-success" to="/ProductDetails">Report</router-link></td>
+                  <th scope="row">Saiful</th>
+                  <td>1200</td>
+                  <td>12-3-2020</td>
+                  <td>Lorem ipsum, dolor sit amet consectetur</td>
                 </tr>
                 <tr>
-                  <th scope="row">2</th>
-                  <td><router-link class="text-white" to="/EditUserForm">Contact</router-link></td>
-                  <td><router-link class="btn btn-success" to="/ProductDetails">Report</router-link></td>
+                  <th scope="row">Saiful</th>
+                  <td>1200</td>
+                  <td>12-3-2020</td>
+                  <td>Lorem ipsum, dolor sit amet consectetur</td>
                 </tr>
               </tbody>
             </table>
@@ -39,20 +40,14 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
-
 export default {
-  name: 'Home',
-  components: {
-    
-  }
+
 }
 </script>
-<style scoped>
-.navlink{
-  text-decoration: none;
-}
+
+<style>
+
 </style>

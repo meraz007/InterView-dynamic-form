@@ -8,23 +8,31 @@
           <form>
             <label class="form-label">Form Name:</label>
             <input class="form-control" type="text">
-            <label class="form-label">Text</label>
-            <input class="form-control" type="text">
-            <label class="form-label">Number</label>
-            <input class="form-control" type="text">
-            <label class="form-label">Date</label>
-            <input class="form-control" type="text">
-            <label class="form-label">Text Area</label>
-            <input class="form-control" type="text">
+            <div v-show="isVisibleText">
+              <label class="form-label">Text</label>
+              <input class="form-control" type="text">
+            </div>
+            <div v-show="isVisibleNumber">
+              <label class="form-label">Number</label>
+              <input class="form-control" type="text">
+            </div>
+            <div v-show="isVisibleDate">
+              <label class="form-label">Date</label>
+              <input class="form-control" type="text">
+            </div>
+            <div v-show="isVisibleTextArea">
+              <label class="form-label">Text Area</label>
+              <input class="form-control" type="text">
+            </div>
             <button class="btn btn-secondary my-3" type="submit">Submit</button>
           </form>
         </div>
         <div class="col-md-4">
           <div class="style">
-          <button class="btn btn-secondary mx-3">Text</button>
-          <button class="btn btn-secondary mx-3">Number</button>
-          <button class="btn btn-secondary mx-3 my-3">Date</button>
-          <button class="btn btn-secondary mx-3">Textarea</button>
+          <button class="btn btn-secondary mx-3" @click="showInputText">Text</button>
+          <button class="btn btn-secondary mx-3" @click="showInputNumber">Number</button>
+          <button class="btn btn-secondary mx-3 my-3" @click="showInputDate">Date</button>
+          <button class="btn btn-secondary mx-3" @click="showInputTextarea">Textarea</button>
           </div>
         </div>
           </div>
@@ -33,6 +41,36 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name:"Form",
+  data(){
+    return{
+      isVisibleText:false,
+      isVisibleNumber:false,
+      isVisibleDate:false,
+      isVisibleTextArea:false
+    }
+  },
+  methods:{
+    showInputText(){
+      this.isVisibleText=true
+    },
+    showInputNumber(){
+      this.isVisibleNumber=true
+    },
+    showInputDate(){
+      this.isVisibleDate=true
+    },
+    showInputTextarea(){
+      this.isVisibleTextArea=true
+    },
+  }
+  
+}
+</script>
+
 <style scoped>
 .style{
   width: 270px;

@@ -21,11 +21,11 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">Saiful</th>
-                  <td>1200</td>
-                  <td>12-3-2020</td>
-                  <td>Lorem ipsum, dolor sit amet consectetur</td>
+                <tr v-for="(item,index) in items" :key="index">
+                  <td>{{item.itemName}}</td>
+                  <td>{{item.quantity}}</td>
+                  <td>{{item.date}}</td>
+                  <td>{{item.details}}</td>
                 </tr>
                 <tr>
                   <th scope="row">Saiful</th>
@@ -44,6 +44,12 @@
 
 <script>
 export default {
+
+  computed:{
+    items(){
+      return this.$store.getters.getItemDetails
+    }
+  }
 
 }
 </script>

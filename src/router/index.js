@@ -15,7 +15,7 @@ const routes = [
     component: () => import('../views/Form.vue')
   },
   {
-    path: '/EditUserForm',
+    path: '/EditUserForm/:id',
     name: 'EditUserForm',
     component: EditUserForm
   },

@@ -47,7 +47,7 @@
             <button 
             class="btn btn-secondary my-3" 
             type="submit"
-            >Submit</button>
+            >Generator</button>
           </form>
         </div>
         <div class="col-md-4">
@@ -97,7 +97,7 @@ export default {
       this.isVisibleTextArea=true
     },
     submitForm(){
-      console.log(this.inputField)
+      this.$store.commit('itemAdd',this.inputField)
       this.inputField=''
     }
   }

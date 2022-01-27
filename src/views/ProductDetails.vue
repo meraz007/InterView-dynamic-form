@@ -13,25 +13,19 @@
             </div>
             <table class="table table-dark table-striped">
               <thead>
-                <tr>
-                  <th scope="col">Name</th>
-                  <th scope="col">Amount</th>
-                  <th scope="col">Made At</th>
-                  <th scope="col">About</th>
+                <tr v-for="(item1,index) in items" :key="index">
+                  <th scope="col">{{item1.text}}</th>
+                  <th scope="col">{{item1.number}}</th>
+                  <th scope="col">{{item1.date}}</th>
+                  <th scope="col">{{item1.textArea}}</th>
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(item,index) in items" :key="index">
+                <tr v-for="(item,index) in itemsDetails" :key="index">
                   <td>{{item.itemName}}</td>
                   <td>{{item.quantity}}</td>
                   <td>{{item.date}}</td>
                   <td>{{item.details}}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Saiful</th>
-                  <td>1200</td>
-                  <td>12-3-2020</td>
-                  <td>Lorem ipsum, dolor sit amet consectetur</td>
                 </tr>
               </tbody>
             </table>
@@ -46,9 +40,12 @@
 export default {
 
   computed:{
-    items(){
+    itemsDetails(){
       return this.$store.getters.getItemDetails
-    }
+    },
+    items(){
+      return this.$store.getters.getItem
+    },
   }
 
 }

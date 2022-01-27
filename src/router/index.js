@@ -20,7 +20,7 @@ const routes = [
     component: EditUserForm
   },
   {
-    path: '/ProductDetails',
+    path: '/ProductDetails/:id',
     name: 'ProductDetails',
     component: ProductDetails
   },

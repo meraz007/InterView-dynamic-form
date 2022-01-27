@@ -24,13 +24,8 @@
                 <tr v-for="(item,index) in items" :key="index">
                   <th scope="row">{{ index }}</th>
                   <td><router-link class="text-white" :to="{name:'EditUserForm',params:{id:index}}">{{item.FormName}}</router-link></td>
-                  <td><router-link class="btn btn-success" to="/ProductDetails">Report</router-link></td>
+                  <td><router-link class="btn btn-success" :to="{name:'ProductDetails',params:{id:index}}">Report</router-link></td>
                 </tr>
-                <!--<tr>
-                  <th scope="row">2</th>
-                  <td><router-link class="text-white" to="/EditUserForm">Contact</router-link></td>
-                  <td><router-link class="btn btn-success" to="/ProductDetails">Report</router-link></td>
-                </tr>-->
               </tbody>
             </table>
           </div>

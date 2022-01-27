@@ -23,7 +23,7 @@
               <tbody>
                 <tr v-for="(item,index) in items" :key="index">
                   <th scope="row">{{ index }}</th>
-                  <td><router-link class="text-white" :to="{path :'/EditUserForm/' + item.id}">{{item.FormName}}</router-link></td>
+                  <td><router-link class="text-white" :to="{name:'EditUserForm',params:{id:index}}">{{item.FormName}}</router-link></td>
                   <td><router-link class="btn btn-success" to="/ProductDetails">Report</router-link></td>
                 </tr>
                 <!--<tr>

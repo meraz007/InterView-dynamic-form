@@ -83,6 +83,7 @@ export default {
       }
     }
   },
+  
   methods:{
     showInputText(){
       this.isVisibleText=true

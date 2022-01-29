@@ -4,11 +4,11 @@
           <div class="col-md-10">
               <div class="card">
                 <div class="card-header">
-                    Food
+                    {{item.FormName}}
                 </div>
                 <div class="card-body">
                    <form @submit.prevent="submitProductDetails">
-                       <div v-for="(item,index) in items" :key="index">
+                       <div>
                         <div v-show="item.text !=''">
                         <label class="form-label">{{item.text}}</label>
                         <input class="form-control" type="text" v-model="prductInput.itemName">
@@ -26,8 +26,11 @@
                         <textarea class="form-control" cols="30" rows="5" v-model="prductInput.details"></textarea>
                         </div>
                        </div>
-                        <button class="btn btn-secondary my-3" type="submit">Submit</button>
+                        <button  @click="alert" class="btn btn-secondary my-3" type="submit">Submit</button>
                     </form>
+                    <div v-show="alertShow" class="alert alert-success" role="alert">
+                        Item Added
+                    </div>
                 </div>
                 </div>
           </div>
@@ -40,6 +43,7 @@ export default {
     name:'EditUserForm',
     data(){
         return{
+            alertShow:false,
             prductInput:{
                 itemName:'',
                 quantity:'',
@@ -49,15 +53,18 @@ export default {
         }
     },
     computed:{
-    items(){
-      return this.$store.getters.getItem
+    item(){
+      return this.$store.getters.getItem[this.$route.params.id]
     },
   },
   methods:{
       submitProductDetails(){
         this.$store.commit('itemDetailsAdd',this.prductInput)
         this.prductInput=''
-      }
+      },
+    alert(){
+        this.alertShow=true
+    }
   }
 
 }

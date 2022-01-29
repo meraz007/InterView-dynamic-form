@@ -13,19 +13,19 @@
             </div>
             <table class="table table-dark table-striped">
               <thead>
-                <tr v-for="(item1,index) in items" :key="index">
-                  <th scope="col">{{item1.text}}</th>
-                  <th scope="col">{{item1.number}}</th>
-                  <th scope="col">{{item1.date}}</th>
-                  <th scope="col">{{item1.textArea}}</th>
+                <tr>
+                  <th scope="col">{{item.text}}</th>
+                  <th scope="col">{{item.number}}</th>
+                  <th scope="col">{{item.date}}</th>
+                  <th scope="col">{{item.textArea}}</th>
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(item,index) in itemsDetails" :key="index">
-                  <td>{{item.itemName}}</td>
-                  <td>{{item.quantity}}</td>
-                  <td>{{item.date}}</td>
-                  <td>{{item.details}}</td>
+                <tr>
+                  <td>{{itemsDetails.itemName}}</td>
+                  <td>{{itemsDetails.quantity}}</td>
+                  <td>{{itemsDetails.date}}</td>
+                  <td>{{itemsDetails.details}}</td>
                 </tr>
               </tbody>
             </table>
@@ -41,10 +41,10 @@ export default {
 
   computed:{
     itemsDetails(){
-      return this.$store.getters.getItemDetails
+      return this.$store.getters.getItemDetails[this.$route.params.id]
     },
-    items(){
-      return this.$store.getters.getItem
+    item(){
+      return this.$store.getters.getItem[this.$route.params.id]
     },
   }
 

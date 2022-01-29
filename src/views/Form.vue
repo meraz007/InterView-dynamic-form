@@ -47,8 +47,12 @@
             <button 
             class="btn btn-secondary my-3" 
             type="submit"
-            >Generator</button>
+            @click="alert"
+            >generate</button>
           </form>
+          <div v-show="alertShow" class="alert alert-success" role="alert">
+            Form Created!!Go to Home....
+          </div>
         </div>
         <div class="col-md-4">
           <div class="style">
@@ -74,6 +78,7 @@ export default {
       isVisibleNumber:false,
       isVisibleDate:false,
       isVisibleTextArea:false,
+      alertShow:false,
       inputField:{
         FormName:'',
         text:'',
@@ -100,6 +105,9 @@ export default {
     submitForm(){
       this.$store.commit('itemAdd',this.inputField)
       this.inputField=''
+    },
+    alert(){
+      this.alertShow=true
     }
   }
   
